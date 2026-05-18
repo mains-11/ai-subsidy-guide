@@ -1,0 +1,1224 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI導入補助金｜必要書類のご案内</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --primary: #1a56db;
+  --primary-dark: #1041b3;
+  --primary-light: #ebf5ff;
+  --accent: #0e9f6e;
+  --accent-light: #e3f9ee;
+  --warn: #d97706;
+  --warn-light: #fffbeb;
+  --danger: #e02424;
+  --danger-light: #fdf2f2;
+  --gray-50: #f9fafb;
+  --gray-100: #f3f4f6;
+  --gray-200: #e5e7eb;
+  --gray-300: #d1d5db;
+  --gray-500: #6b7280;
+  --gray-700: #374151;
+  --gray-900: #111827;
+  --border: #e5e7eb;
+  --shadow-sm: 0 1px 3px rgba(0,0,0,.08);
+  --shadow: 0 4px 16px rgba(0,0,0,.10);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,.13);
+  --radius: 12px;
+  --radius-sm: 8px;
+}
+
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP',sans-serif;font-size:15px;color:var(--gray-900);background:#f0f4f8;min-height:100vh;line-height:1.7}
+
+/* ─── MODAL OVERLAY ─── */
+#fraud-modal{
+  position:fixed;inset:0;z-index:9999;
+  background:rgba(15,23,42,.75);backdrop-filter:blur(4px);
+  display:flex;align-items:center;justify-content:center;padding:16px;
+}
+#fraud-modal.hidden{display:none}
+.modal-box{
+  background:#fff;border-radius:16px;max-width:720px;width:100%;
+  max-height:90vh;display:flex;flex-direction:column;
+  box-shadow:0 20px 60px rgba(0,0,0,.3);
+  overflow:hidden;
+}
+.modal-header{
+  background:linear-gradient(135deg,#c81e1e 0%,#e02424 100%);
+  color:#fff;padding:20px 24px;flex-shrink:0;
+}
+.modal-header h2{font-size:17px;font-weight:700;display:flex;align-items:center;gap:8px}
+.modal-body{overflow-y:auto;padding:24px;flex:1}
+.modal-body h4{
+  font-size:13.5px;font-weight:700;color:var(--gray-700);
+  margin:20px 0 8px;padding:6px 10px;
+  background:var(--gray-100);border-left:3px solid var(--danger);border-radius:4px;
+}
+.modal-body h4:first-child{margin-top:0}
+.modal-body p,.modal-body li{font-size:13.5px;color:var(--gray-700);line-height:1.8}
+.modal-body ul{padding-left:20px;margin:6px 0}
+.modal-body li{margin:2px 0}
+.modal-footer{
+  padding:16px 24px;border-top:1px solid var(--border);
+  flex-shrink:0;background:var(--gray-50);
+}
+.modal-scroll-hint{
+  font-size:12px;color:var(--gray-500);text-align:center;margin-bottom:12px;
+}
+.modal-confirm-btn{
+  width:100%;padding:14px;border:none;border-radius:10px;
+  background:var(--gray-300);color:var(--gray-500);
+  font-size:15px;font-weight:700;cursor:not-allowed;
+  font-family:inherit;transition:all .25s;
+}
+.modal-confirm-btn.active{
+  background:linear-gradient(135deg,#0e9f6e,#057a55);
+  color:#fff;cursor:pointer;
+  box-shadow:0 4px 12px rgba(14,159,110,.3);
+}
+.modal-confirm-btn.active:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(14,159,110,.4)}
+.modal-notice{
+  background:linear-gradient(135deg,#fef3c7,#fef9c3);
+  border:1px solid #f59e0b;border-radius:8px;padding:12px 16px;
+  font-size:13px;color:#78350f;text-align:center;font-weight:500;
+  margin-bottom:12px;
+}
+
+/* ─── HEADER ─── */
+.site-header{
+  background:linear-gradient(135deg,#1e3a8a 0%,#1d4ed8 60%,#2563eb 100%);
+  color:#fff;text-align:center;padding:48px 24px 40px;
+  position:relative;overflow:hidden;
+}
+.site-header::before{
+  content:'';position:absolute;inset:0;
+  background:radial-gradient(ellipse at 30% 50%,rgba(255,255,255,.07) 0%,transparent 60%),
+             radial-gradient(ellipse at 70% 20%,rgba(99,179,237,.15) 0%,transparent 50%);
+}
+.site-header .badge{
+  display:inline-block;background:rgba(255,255,255,.15);
+  border:1px solid rgba(255,255,255,.3);border-radius:100px;
+  font-size:12px;font-weight:600;padding:4px 14px;
+  letter-spacing:.05em;margin-bottom:16px;
+}
+.site-header h1{
+  font-family:'Zen Kaku Gothic New',sans-serif;
+  font-size:clamp(22px,5vw,34px);font-weight:700;
+  line-height:1.35;position:relative;
+}
+.site-header h1 span{display:block;font-size:.55em;font-weight:500;opacity:.85;margin-bottom:4px}
+
+/* ─── MAIN ─── */
+.main-wrap{max-width:760px;margin:0 auto;padding:32px 16px 64px}
+
+/* ─── INTRO CARD ─── */
+.intro-card{
+  background:#fff;border-radius:var(--radius);padding:24px 28px;
+  box-shadow:var(--shadow-sm);border-left:4px solid var(--primary);margin-bottom:28px;
+}
+.intro-card .label{
+  display:flex;align-items:center;gap:6px;font-size:12px;font-weight:700;
+  color:var(--primary);text-transform:uppercase;letter-spacing:.07em;margin-bottom:8px;
+}
+.intro-card p{font-size:14px;color:var(--gray-700);line-height:1.8}
+.intro-card strong{color:var(--gray-900)}
+
+/* ─── FRAUD BANNER ─── */
+.fraud-banner{
+  background:var(--danger-light);border:1px solid #f8b4b4;border-radius:var(--radius-sm);
+  padding:12px 18px;display:flex;align-items:center;gap:10px;
+  margin-bottom:28px;cursor:pointer;transition:box-shadow .2s;
+}
+.fraud-banner:hover{box-shadow:var(--shadow-sm)}
+.fraud-banner span{font-size:13.5px;color:var(--danger);font-weight:600}
+.fraud-banner .arrow{margin-left:auto;color:var(--danger);font-size:14px}
+
+/* ─── STEPS ─── */
+.section-title{
+  font-size:18px;font-weight:700;color:var(--gray-900);
+  margin-bottom:20px;padding-bottom:10px;
+  border-bottom:2px solid var(--border);
+}
+.steps{display:flex;flex-direction:column;gap:16px;margin-bottom:36px}
+.step-card{
+  background:#fff;border-radius:var(--radius);padding:22px 24px;
+  box-shadow:var(--shadow-sm);display:flex;gap:20px;align-items:flex-start;
+  border:1px solid var(--border);
+}
+.step-num{
+  flex-shrink:0;width:42px;height:42px;border-radius:50%;
+  background:linear-gradient(135deg,var(--primary),var(--primary-dark));
+  color:#fff;font-size:18px;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  box-shadow:0 4px 10px rgba(26,86,219,.25);
+}
+.step-content{flex:1}
+.step-label{font-size:11px;font-weight:600;color:var(--gray-500);letter-spacing:.06em;margin-bottom:4px}
+.step-title{font-size:16px;font-weight:700;margin-bottom:8px}
+.step-desc{font-size:13.5px;color:var(--gray-700);line-height:1.75}
+.step-warn{
+  margin-top:8px;font-size:12.5px;color:var(--warn);
+  background:var(--warn-light);border-radius:6px;padding:6px 10px;
+  display:flex;align-items:flex-start;gap:5px;
+}
+.step-link{
+  display:inline-flex;align-items:center;gap:6px;margin-top:12px;
+  padding:8px 16px;border-radius:8px;border:1.5px solid var(--primary);
+  color:var(--primary);font-size:13px;font-weight:600;text-decoration:none;
+  transition:all .2s;
+}
+.step-link:hover{background:var(--primary);color:#fff}
+.step-links{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px}
+
+/* ─── TABS ─── */
+.tabs-wrap{margin-bottom:24px}
+.tabs{display:flex;border-radius:10px;overflow:hidden;border:1.5px solid var(--border);background:#fff}
+.tab-btn{
+  flex:1;padding:13px 10px;border:none;background:none;cursor:pointer;
+  font-family:inherit;font-size:14px;font-weight:600;color:var(--gray-500);
+  transition:all .2s;display:flex;align-items:center;justify-content:center;gap:6px;
+}
+.tab-btn.active{background:var(--primary);color:#fff}
+.tab-btn:not(.active):hover{background:var(--gray-100)}
+
+/* ─── DOCS LIST ─── */
+.docs-list{display:flex;flex-direction:column;gap:12px}
+.doc-card{
+  background:#fff;border-radius:var(--radius);border:1px solid var(--border);
+  box-shadow:var(--shadow-sm);overflow:hidden;
+}
+.doc-header{
+  display:flex;align-items:center;padding:16px 20px;gap:14px;cursor:pointer;
+  transition:background .15s;user-select:none;
+}
+.doc-header:hover{background:var(--gray-50)}
+.doc-icon{
+  width:44px;height:44px;border-radius:10px;
+  background:var(--primary-light);color:var(--primary);
+  display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;
+}
+.doc-meta{flex:1}
+.doc-num{font-size:11px;font-weight:700;color:var(--gray-500);letter-spacing:.07em}
+.doc-name{font-size:15px;font-weight:700;color:var(--gray-900)}
+.doc-tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:4px}
+.doc-tag{
+  font-size:11px;font-weight:600;padding:2px 8px;border-radius:100px;
+}
+.tag-online{background:#dbeafe;color:#1e40af}
+.tag-time{background:#fef9c3;color:#854d0e}
+.tag-doc{background:#f0fdf4;color:#15803d}
+.tag-required{background:#fce7f3;color:#9d174d}
+.tag-bonus{background:#f5f3ff;color:#5b21b6}
+.doc-chevron{
+  font-size:16px;color:var(--gray-400);transition:transform .25s;flex-shrink:0;
+}
+.doc-chevron.open{transform:rotate(180deg)}
+.doc-body{
+  border-top:1px solid var(--border);padding:20px 24px;
+  display:none;
+  background:var(--gray-50);
+}
+.doc-body.open{display:block}
+.doc-links{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.btn-link{
+  display:inline-flex;align-items:center;gap:5px;
+  padding:7px 14px;border-radius:8px;font-size:13px;font-weight:600;
+  text-decoration:none;transition:all .2s;border:1.5px solid transparent;
+}
+.btn-primary{background:var(--primary);color:#fff;border-color:var(--primary)}
+.btn-primary:hover{background:var(--primary-dark)}
+.btn-outline{background:#fff;color:var(--primary);border-color:var(--primary)}
+.btn-outline:hover{background:var(--primary-light)}
+
+.notice-box{
+  border-radius:8px;padding:14px 16px;margin-bottom:12px;
+}
+.notice-danger{background:#fff5f5;border:1px solid #fed7d7}
+.notice-warn{background:var(--warn-light);border:1px solid #fde68a}
+.notice-info{background:var(--primary-light);border:1px solid #bfdbfe}
+.notice-success{background:var(--accent-light);border:1px solid #a7f3d0}
+.notice-box h4{
+  font-size:13px;font-weight:700;margin-bottom:6px;
+  display:flex;align-items:center;gap:5px;
+}
+.notice-danger h4{color:var(--danger)}
+.notice-warn h4{color:var(--warn)}
+.notice-info h4{color:var(--primary)}
+.notice-success h4{color:var(--accent)}
+.notice-box p,.notice-box li{font-size:13px;line-height:1.8;color:var(--gray-700)}
+.notice-box ul{padding-left:18px;margin-top:4px}
+.notice-box li{margin:2px 0}
+.notice-box strong{color:var(--gray-900)}
+
+.divider-cards{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}
+.mini-card{
+  flex:1;min-width:200px;background:#fff;border:1px solid var(--border);
+  border-radius:8px;padding:12px 14px;
+}
+.mini-card .mc-title{font-size:12px;font-weight:700;color:var(--gray-900);margin-bottom:4px}
+.mini-card p{font-size:12.5px;color:var(--gray-600)}
+
+.conveni-box{
+  background:#fff;border:1px solid var(--border);border-radius:8px;padding:14px 16px;margin-top:10px;
+}
+.conveni-box .c-title{font-size:12.5px;font-weight:700;color:var(--gray-700);margin-bottom:8px}
+.conveni-box .c-need{font-size:12px;color:var(--gray-500);margin-bottom:8px}
+.conveni-links{display:flex;flex-wrap:wrap;gap:6px}
+.conveni-links a{
+  font-size:12px;font-weight:600;color:var(--primary);
+  background:var(--primary-light);border-radius:6px;padding:4px 10px;
+  text-decoration:none;transition:background .2s;
+}
+.conveni-links a:hover{background:#bfdbfe}
+
+.img-wrap{text-align:center;margin:12px 0}
+.img-wrap img{max-width:100%;border-radius:8px;border:1px solid var(--border)}
+
+/* ─── FOOTER ─── */
+footer{
+  text-align:center;padding:32px 16px;
+  background:#fff;border-top:1px solid var(--border);
+  font-size:12.5px;color:var(--gray-500);
+}
+footer a{color:var(--primary);text-decoration:none}
+
+/* ─── RESPONSIVE ─── */
+@media(max-width:600px){
+  .step-card{flex-direction:column;gap:12px}
+  .step-num{width:34px;height:34px;font-size:15px}
+  .main-wrap{padding:24px 12px 48px}
+  .doc-header{padding:12px 14px}
+  .doc-body{padding:16px}
+  .site-header{padding:36px 16px 30px}
+}
+</style>
+</head>
+<body>
+
+<!-- ======== FRAUD MODAL ======== -->
+<div id="fraud-modal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h2>⚠️ 不正に関する重要な注意喚起</h2>
+    </div>
+    <div class="modal-body" id="modal-body">
+      <p style="font-size:13.5px;color:#4b5563;margin-bottom:16px">
+        本補助金の申請にあたっては、適正な申請および事業実施が求められます。不正または不適切と判断された場合、交付決定後であっても補助金の返還等の措置が取られる可能性があります。以下の内容をご確認のうえ、適正な申請をお願いいたします。
+      </p>
+
+      <h4>① 申請は必ず申請者自身が実施してください</h4>
+      <p>本補助金は、申請者ご自身が申請内容およびシステム情報を十分に理解・確認したうえで申請を行う必要があります。申請の代行は認められておりませんので、ご注意ください。<br>また、決算情報・従業員数・社内体制等について、事実と異なる内容での申請はできません。虚偽の情報を記載した場合は、虚偽申請として取り扱われる可能性があります。</p>
+
+      <h4>② 補助金受給のみを目的とした申請は禁止されています</h4>
+      <p>補助金を受け取ることのみを目的とした申請は認められていません。以下のような申請は不適切と判断される可能性があります。</p>
+      <ul><li>実態のないツール導入</li><li>導入後の活用計画がない申請</li><li>業務改善に資さない導入内容</li></ul>
+      <p style="margin-top:6px">申請内容が実際の業務改善に資するものとなっているか、必ずご確認ください。</p>
+
+      <h4>③ 実態のあるシステム導入が必要です</h4>
+      <p>交付決定後であっても、事務局による実地調査や証憑確認が行われる場合があります。以下の点について説明可能な内容となっている必要があります。</p>
+      <ul><li>導入の目的</li><li>活用方法</li><li>業務改善効果</li><li>導入後の運用体制</li></ul>
+      <p style="margin-top:6px">実態のない導入と判断された場合、不正とみなされる可能性があります。</p>
+
+      <h4>④ 補助対象経費の払い戻し（キックバック）は禁止されています</h4>
+      <p>補助対象経費の請求額に対して、以下のような行為は禁止されています。</p>
+      <ul><li>口座振込による払い戻し</li><li>現金による返金</li><li>値引き後に別途返金する行為</li></ul>
+      <p style="margin-top:6px">請求書記載金額と実際の支払金額は一致している必要があります。</p>
+
+      <h4>⑤ 第三者を介した資金還流は禁止されています</h4>
+      <ul><li>発注先と関係のない第三者からの資金提供</li><li>資金の還流を伴う商取引</li><li>実態のない金融取引</li></ul>
+
+      <h4>⑥ 補助金等適正化法に違反する行為は禁止されています</h4>
+      <ul><li>補助金の他用途への流用</li><li>虚偽報告</li><li>実態のない事業実施</li></ul>
+      <p style="margin-top:6px">また、過去に補助金等適正化法に違反している場合、申請が認められない可能性があります。</p>
+
+      <h4>⑦ 不正が確認された場合の対応について</h4>
+      <ul><li>補助金の返還</li><li>加算金の請求</li><li>申請の取り消し</li><li>今後の補助金申請の制限</li></ul>
+
+      <h4>⑧ 購入設備の第三者貸与について</h4>
+      <p>補助対象として購入した設備は、申請者自身が占有し、事業の用に供することが前提です。以下のような利用は認められていません。</p>
+      <ul><li>特定の第三者への長期間貸与</li><li>申請者が使用しない設備導入</li></ul>
+
+      <h4>⑨ 公序良俗・法令遵守について</h4>
+      <ul><li>公序良俗に反する事業</li><li>社会通念上不適切と認められる事業</li><li>法令違反または違反のおそれがある事業</li><li>消費者保護の観点から不適切な事業</li></ul>
+
+      <h4>⑩ 風俗営業等に該当する事業について</h4>
+      <ul><li>風俗営業等の規制及び業務の適正化等に関する法律第2条に該当する営業</li><li>店舗型性風俗特殊営業</li></ul>
+      <p style="margin-top:6px">ただし、旅館業法に基づき許可を受けた旅館業（店舗型性風俗特殊営業を除く）は対象となる場合があります。</p>
+
+      <div style="background:#f0fdf4;border:1px solid #86efac;border-radius:8px;padding:14px 16px;margin-top:20px">
+        <p style="font-weight:700;color:#15803d;font-size:13.5px">📋 最終確認のお願い</p>
+        <p style="margin-top:4px">本補助金は、適正な事業実施を前提とした制度です。申請前に、上記内容をご確認いただき、適正な申請をお願いいたします。不明点がある場合は、必ず事前にご相談ください。</p>
+      </div>
+    </div>
+    <div class="modal-footer">
+      <div class="modal-notice" id="scroll-hint">↑ スクロールしてすべての内容をご確認ください</div>
+      <button class="modal-confirm-btn" id="confirm-btn" onclick="closeModal()">内容を確認しました</button>
+    </div>
+  </div>
+</div>
+
+<!-- ======== MAIN SITE ======== -->
+<header class="site-header">
+  <div class="badge">デジタル化・AI導入補助金</div>
+  <h1>
+    AI導入補助金<br>必要書類のご案内
+  </h1>
+</header>
+
+<main class="main-wrap">
+
+  <!-- Intro -->
+  <div class="intro-card">
+    <div class="label">💡 補助金の目的</div>
+    <p>業務効率化やDX推進に向けた<strong>ソフトウェア・クラウドサービス等のITツール導入費用</strong>を国が一部補助する制度です。下記の書類準備と、オンラインでの交付申請手続きが必要となります。</p>
+  </div>
+
+  <!-- Fraud banner -->
+  <div class="fraud-banner" onclick="openModal()">
+    <span>⚠️ 不正に関する重要な注意喚起を確認する</span>
+    <span class="arrow">›</span>
+  </div>
+
+  <!-- Steps -->
+  <h2 class="section-title">申請手続きの流れ</h2>
+  <div class="steps">
+    <div class="step-card">
+      <div class="step-num">1</div>
+      <div class="step-content">
+        <div class="step-label">Step 01</div>
+        <div class="step-title">📂 必要書類を準備</div>
+        <div class="step-desc">必要書類をメールに記載の期日までに弊社担当へお送りください。ご送付いただいてから <strong>3営業日以内</strong> に不備がないかを確認させていただきます。</div>
+        <div class="step-warn">⚠️ 法人様と個人事業主様で必要書類が異なりますのでご注意ください。</div>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">2</div>
+      <div class="step-content">
+        <div class="step-label">Step 02</div>
+        <div class="step-title">💻 オンラインにて交付申請</div>
+        <div class="step-desc">全ての書類が揃い次第、オンラインにて <strong>約60分</strong> で交付申請完了まで行うことができます。</div>
+        <div class="step-warn">⚠️ 画面共有をしていただきながら進めますので、<strong>必ずPCでご参加</strong>ください。</div>
+      </div>
+    </div>
+    <div class="step-card">
+      <div class="step-num">3</div>
+      <div class="step-content">
+        <div class="step-label">Step 03</div>
+        <div class="step-title">🎉 採択発表</div>
+        <div class="step-desc">採択がおりましたら、弊社から今後の流れと共に結果をご連絡いたします。AI導入補助金の事業スケジュールは公式サイトをご確認ください。</div>
+        <div class="step-links">
+          <a class="step-link" href="https://it-shien.smrj.go.jp/schedule/" target="_blank">🔗 スケジュールはこちら（公式）</a>
+          <a class="step-link" href="https://drive.google.com/file/d/1hcUNKldRBuU76yRYUdme0vkWV8KJCwzA/view?usp=sharing" target="_blank">📋 全体の流れをみる</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Docs section -->
+  <h2 class="section-title">必要書類一覧</h2>
+
+  <!-- Tabs -->
+  <div class="tabs-wrap">
+    <div class="tabs">
+      <button class="tab-btn active" id="tab-corp" onclick="switchTab('corp')">🏢 法人向け</button>
+      <button class="tab-btn" id="tab-indiv" onclick="switchTab('indiv')">👤 個人事業主向け</button>
+    </div>
+  </div>
+
+  <!-- ========== 法人向け ========== -->
+  <div id="docs-corp" class="docs-list">
+
+    <!-- Doc 01 -->
+    <div class="doc-card">
+      <div class="doc-header" onclick="toggleDoc(this)">
+        <div class="doc-icon">🔑</div>
+        <div class="doc-meta">
+          <div class="doc-num">Doc 01</div>
+          <div class="doc-name">GビズIDプライム</div>
+          <div class="doc-tags">
+            <span class="doc-tag tag-online">オンライン取得</span>
+            <span class="doc-tag tag-time">要：マイナンバーカード</span>
+          </div>
+        </div>
+        <div class="doc-chevron">⌄</div>
+      </div>
+      <div class="doc-body">
+        <div class="doc-links">
+          <a class="btn-link btn-primary" href="https://gbiz-id.go.jp/top/" target="_blank">🌐 登録サイトへ</a>
+          <a class="btn-link btn-outline" href="https://drive.google.com/file/d/1nPSdUPOZbVX94MddtMLaJPZ4WQHDPB7l/view?usp=drive_link" target="_blank">📖 マニュアル</a>
+        </div>
+        <div class="notice-box notice-danger">
+          <h4>🚩 お早めに！時間がかかる場合があります</h4>
+          <ul>
+            <li>郵送手続きをされる場合はアカウント発行までに <strong>1〜2週間</strong> かかるため、お早めのご対応をお願いいたします。</li>
+            <li>オンライン手続きをされる場合は <strong>即日でアカウント発行</strong> 可能です。</li>
+          </ul>
+        </div>
+        <div class="notice-box notice-warn">
+          <h4>⚠️ 認証設定が必要です</h4>
+          <p>アプリ認証またはメールワンタイムパスワード認証の設定が必要です。</p>
+          <a class="btn-link btn-outline" href="https://drive.google.com/file/d/1mTpDkdmMH9XXdbIOxFky3r1YNk27ufjD/view?usp=sharing" target="_blank" style="margin-top:8px;display:inline-flex">📖 マニュアル</a>
+        </div>
+        <div class="notice-box notice-info">
+          <h4>📸 取得後にキャプチャをご共有ください</h4>
+          <p>GビズIDプライムを取得したら、<strong>マイページのTOP画面をキャプチャ</strong>してください。取得したキャプチャは、<strong>フォームに添付</strong>するか弊社担当者宛に <strong>メール/LINE</strong> でお送りください。スムーズな手続きのため、ご協力をお願いいたします。</p>
+          <a class="btn-link btn-outline" href="https://drive.google.com/file/d/1Qs79DtPzecfnAgYsFRnrMKvYhq0ZmIQw/view?usp=drive_link" target="_blank" style="margin-top:8px;display:inline-flex">📖 キャプチャ取得マニュアル</a>
+        </div>
+        <div class="divider-cards">
+          <div class="mini-card">
+            <div class="mc-title">🪪 マイナンバーカードあり</div>
+            <p>オンラインで即日取得可能。スマートフォンアプリの登録が必須です。</p>
+          </div>
+          <div class="mini-card">
+            <div class="mc-title">📮 マイナンバーカードなし</div>
+            <p>郵送手続きにて取得可能。スマートフォンアプリの登録が必須です。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doc 02 -->
+    <div class="doc-card">
+      <div class="doc-header" onclick="toggleDoc(this)">
+        <div class="doc-icon">🛡️</div>
+        <div class="doc-meta">
+          <div class="doc-num">Doc 02</div>
+          <div class="doc-name">SECURITY ACTION 自己宣言ID</div>
+          <div class="doc-tags">
+            <span class="doc-tag tag-online">オンライン取得</span>
+            <span class="doc-tag tag-time">約1週間</span>
+          </div>
+        </div>
+        <div class="doc-chevron">⌄</div>
+      </div>
+      <div class="doc-body">
+        <div class="doc-links">
+          <a class="btn-link btn-primary" href="https://sme-security.ipa.go.jp/login" target="_blank">🌐 登録サイトへ</a>
+          <a class="btn-link btn-outline" href="https://drive.google.com/file/d/14MjpicCex5vQFLMRIVe65Pzkh26MO1Zi/view?usp=drive_link" target="_blank">📖 マニュアル</a>
+        </div>
+        <div class="notice-box notice-danger">
+          <h4>🚨 2026年4月1日（予定）から申込方法が変わります！</h4>
+          <p>申込から管理まで一新する「SECURITY ACTION管理システム」が新しく公開されます。ご利用にはGビズIDプライムまたはメンバーのアカウントが<strong>必須</strong>となります。</p>
+          <p style="margin-top:8px;font-weight:600">既にお申し込み済みの方へ：</p>
+          <ul>
+            <li>第1次公募は現在の方法で取得した自己宣言ID・新システムのIDの双方で申請可能です。</li>
+            <li>第2次公募（2026年5月頃〜）以降は、<strong>現在の自己宣言IDでは申請できなくなります。</strong></li>
+            <li>以降はGビズIDを用いて新システムでの申込みが必要です。</li>
+          </ul>
+        </div>
+        <div class="notice-box notice-warn">
+          <h4>⏳ 発行まで約1週間かかります</h4>
+          <p>登録が完了すると1週間程でメールが届きます。<br>
+          📧 件名：<strong>【SECURITY ACTION】自己宣言IDのお知らせ</strong><br>
+          メール本文に記載の「<strong>4または5から始まる11桁の自己宣言ID</strong>」をフォームに入力または直接ご教示ください。</p>
+          <p style="margin-top:6px;font-size:12px;color:#6b7280">※フォーム入力時点で未取得の場合は、直接ご教示いただきますようお願いいたします。</p>
+        </div>
+        <div class="notice-box notice-info">
+          <h4>⭐ 星の選択について</h4>
+          <p>「<strong>★一つ星</strong>」または「★★二つ星」をお選びください。<strong>「★一つ星」を推奨しております。</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doc 03 -->
+    <div class="doc-card">
+      <div class="doc-header" onclick="toggleDoc(this)">
+        <div class="doc-icon">🗺️</div>
+        <div class="doc-meta">
+          <div class="doc-num">Doc 03</div>
+          <div class="doc-name">IT戦略ナビ with「IT戦略マップ」</div>
+          <div class="doc-tags">
+            <span class="doc-tag tag-online">オンライン作成</span>
+            <span class="doc-tag tag-doc">PDF提出</span>
+            <span class="doc-tag tag-bonus">加点対象</span>
+          </div>
+        </div>
+        <div class="doc-chevron">⌄</div>
+      </div>
+      <div class="doc-body">
+        <div class="doc-links">
+          <a class="btn-link btn-primary" href="https://digiwith.smrj.go.jp/it-map/diagnose/step1" target="_blank">🌐 作成サイトへ</a>
+          <a class="btn-link btn-outline" href="https://drive.google.com/file/d/1ebmyv7kfjC_Pc1Ma1P4cT7B08GUuZwoV/view?usp=drive_link" target="_blank">📖 作成マニュアル</a>
+        </div>
+        <div class="notice-box notice-info">
+          <ul>
+            <li>GビズIDプライムの<strong>メールアドレスを入力する画面</strong>がございますので、<strong>正確にご入力</strong>ください</li>
+            <li><strong>PDF</strong>でのご提出をお願いいたします</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doc 04 -->
+    <div class="doc-card">
+      <div class="doc-header" onclick="toggleDoc(this)">
+        <div class="doc-icon">📊</div>
+        <div class="doc-meta">
+          <div class="doc-num">Doc 04</div>
+          <div class="doc-name">省力化ナビ</div>
+          <div class="doc-tags">
+            <span class="doc-tag tag-bonus">加点対象</span>
+          </div>
+        </div>
+        <div class="doc-chevron">⌄</div>
+      </div>
+      <div class="doc-body">
+        <div class="doc-links">
+          <a class="btn-link btn-primary" href="https://labour-saving.smrj.go.jp/" target="_blank">🌐 登録サイトへ</a>
+          <a class="btn-link btn-outline" href="https://drive.google.com/file/d/1k96fMSLWdzIamEmvhLi6pfqSMaPwh1U5/view?usp=drive_link" target="_blank">📖 マニュアル</a>
+        </div>
+        <p style="font-size:13.5px;color:#4b5563;margin-bottom:12px">"何から取り組めばいいかわからない"という方々から、"具体的な解決策を知りたい"事業者まで、みなさまの省力化・生産性向上への取組みを後押しするツールです。</p>
+        <div class="notice-box notice-warn">
+          <h4>⚠️ 注意事項</h4>
+          <ul>
+            <li>GビズIDで登録しているメールアドレス、企業名、担当者名を入力してください</li>
+            <li>補助金の加点に使用しますので、<strong>3箇所全て入力が必須</strong>となります</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doc 05 -->
+    <div class="doc-card">
+      <div class="doc-header" onclick="toggleDoc(this)">
+        <div class="doc-icon">🤝</div>
+        <div class="doc-meta">
+          <div class="doc-num">Doc 05</div>
+          <div class="doc-name">成長加速マッチングサービス</div>
+          <div class="doc-tags">
+            <span class="doc-tag tag-bonus">加点対象</span>
+          </div>
+        </div>
+        <div class="doc-chevron">⌄</div>
+      </div>
+      <div class="doc-body">
+        <p style="font-size:13.5px;color:#4b5563;margin-bottom:12px">中小企業庁が運営し、事業拡大や新規事業立ち上げなどの成長志向を持つ事業者が、支援者とつながることができる公的マッチングプラットフォームです。</p>
+        <div class="notice-box notice-info">
+          <h4>📌 サービスの特徴</h4>
+          <ul>
+            <li>挑戦課題を登録 → 支援者から提案を受け取る</li>
+            <li>登録・利用は<strong>無料</strong></li>
+            <li>IT導入補助金の交付申請において、挑戦課題が「掲載中」の場合、<strong>加点対象</strong>となります</li>
+          </ul>
+          <p style="margin-top:6px;font-size:12px;color:#6b7280">※マッチング後に支援者から提案される支援メニューの費用は、各支援者にご確認ください</p>
+        </div>
+        <div class="notice-box notice-warn">
+          <h4>⚠️ 注意事項</h4>
+          <ul>
+            <li>GビズIDプライムでログインいただきます</li>
+            <li>作業時間の目安：<strong>約15分</strong></li>
+            <li>挑戦課題を<strong>必ず1件以上登録</strong>し、ステータスが「掲載中」となっている必要があります</li>
+            <li>交付申請締切日時点でステータスが「掲載終了」の場合、<strong>加点対象外</strong>となります</li>
+            <li>交付決定までは「<strong>掲載終了</strong>」を押さないようお願いいたします</li>
+          </ul>
+        </div>
+        <div class="notice-box notice-success">
+          <h4>📸 キャプチャのご共有をお願いします</h4>
+          <p>ステータスが「<strong>掲載中</strong>」となりましたら、画面キャプチャを取得してご共有ください。</p>
+          <div class="img-wrap">
+            <img src="https://i.imgur.com/tZbKioN.png" alt="掲載中ステータス確認画面の例">
+          </div>
+        </div>
+        <div class="doc-links">
+          <a class="btn-link btn-primary" href="https://mirasapo-connect.go.jp/" target="_blank">▶ サービス詳細・登録はこちら</a>
+          <a class="btn-link btn-outline" href="https://drive.google.com/file/d/1L-ioFwe2yZzhzB5DuW0UENYxnJ7mJAUO/view?usp=drive_link" target="_blank">📖 マニュアル</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doc 06 -->
+    <div class="doc-card">
+      <div class="doc-header" onclick="toggleDoc(this)">
+        <div class="doc-icon">📄</div>
+        <div class="doc-meta">
+          <div class="doc-num">Doc 06</div>
+          <div class="doc-name">履歴事項全部証明書</div>
+          <div class="doc-tags">
+            <span class="doc-tag tag-doc">書類</span>
+            <span class="doc-tag tag-time">3ヶ月以内</span>
+          </div>
+        </div>
+        <div class="doc-chevron">⌄</div>
+      </div>
+      <div class="doc-body">
+        <div class="doc-links">
+          <a class="btn-link btn-primary" href="https://www.moj.go.jp/MINJI/minji10.html" target="_blank">🌐 法務局 取得方法</a>
+          <a class="btn-link btn-outline" href="https://drive.google.com/file/d/1YaWcTFlKIML5D22RwhPzMSVRSp79d1Zw/view?usp=drive_link" target="_blank">📖 見本</a>
+        </div>
+        <div class="notice-box notice-info">
+          <ul>
+            <li>「<strong>履歴事項全部証明書</strong>」であること</li>
+            <li>発行日が申請日より <strong>3ヶ月以内</strong> のもの</li>
+            <li><strong>全ページ</strong> 揃っていること</li>
+          </ul>
+        </div>
+        <div class="conveni-box">
+          <div class="c-title">🏪 コンビニで書類をPDFにスキャンする方法</div>
+          <div class="c-need">必要なもの：30円（1枚あたり）／ USBメモリーまたはスマートフォンアプリ ※セブンイレブンスキャン用アプリが必要です（iOS / Android）</div>
+          <div class="conveni-links">
+            <a href="https://www.sej.co.jp/services/scan.html" target="_blank">🏪 セブンイレブン</a>
+            <a href="https://www.family.co.jp/services/print/scan.html" target="_blank">🏪 ファミリーマート</a>
+            <a href="https://www.lawson.co.jp/service/others/multicopy/" target="_blank">🏪 ローソン</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doc 07 -->
+    <div class="doc-card">
+      <div class="doc-header" onclick="toggleDoc(this)">
+        <div class="doc-icon">🏦</div>
+        <div class="doc-meta">
+          <div class="doc-num">Doc 07</div>
+          <div class="doc-name">法人税納税証明書</div>
+          <div class="doc-tags">
+            <span class="doc-tag tag-doc">書類</span>
+            <span class="doc-tag tag-time">直近分</span>
+          </div>
+        </div>
+        <div class="doc-chevron">⌄</div>
+      </div>
+      <div class="doc-body">
+        <div class="doc-links">
+          <a class="btn-link btn-primary" href="https://www.nta.go.jp/about/organization/access/map.htm" target="_blank">🌐 税務署を探す</a>
+          <a class="btn-link btn-outline" href="https://drive.google.com/file/d/1drBLg5oMmwjvEn22A-GNWP0kgbw-IoXK/view?usp=drive_link" target="_blank">📖 見本</a>
+        </div>
+        <div class="notice-box notice-info">
+          <ul>
+            <li>納税証明書「<strong>その1（納税額等証明用）</strong>」または「<strong>その2（所得金額用）</strong>」であること</li>
+            <li>税目が「<strong>法人税</strong>」であること</li>
+            <li><strong>直近分</strong>であること</li>
+            <li>発行元が「<strong>税務署</strong>」であること</li>
+          </ul>
+        </div>
+        <div class="conveni-box">
+          <div class="c-title">🏪 コンビニで書類をPDFにスキャンする方法</div>
+          <div class="c-need">必要なもの：30円（1枚あたり）／ USBメモリーまたはスマートフォンアプリ ※セブンイレブンスキャン用アプリが必要です（iOS / Android）</div>
+          <div class="conveni-links">
+            <a href="https://www.sej.co.jp/services/scan.html" target="_blank">🏪 セブンイレブン</a>
+            <a href="https://www.family.co.jp/services/print/scan.html" target="_blank">🏪 ファミリーマート</a>
+            <a href="https://www.lawson.co.jp/service/others/multicopy/" target="_blank">🏪 ローソン</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doc 08 -->
+    <div class="doc-card">
+      <div class="doc-header" onclick="toggleDoc(this)">
+        <div class="doc-icon">📑</div>
+        <div class="doc-meta">
+          <div class="doc-num">Doc 08</div>
+          <div class="doc-name">決算書</div>
+          <div class="doc-tags">
+            <span class="doc-tag tag-doc">書類</span>
+            <span class="doc-tag tag-time">直近分</span>
+          </div>
+        </div>
+        <div class="doc-chevron">⌄</div>
+      </div>
+      <div class="doc-body">
+        <div class="notice-box notice-info">
+          <p><strong>貸借対照表</strong>および<strong>損益計算書</strong>が必要です。</p>
+          <ul style="margin-top:8px">
+            <li>直近分の<strong>前期決算書</strong>であること</li>
+          </ul>
+        </div>
+        <div class="conveni-box">
+          <div class="c-title">🏪 コンビニで書類をPDFにスキャンする方法</div>
+          <div class="c-need">必要なもの：30円（1枚あたり）／ USBメモリーまたはスマートフォンアプリ ※セブンイレブンスキャン用アプリが必要です（iOS / Android）</div>
+          <div class="conveni-links">
+            <a href="https://www.sej.co.jp/services/scan.html" target="_blank">🏪 セブンイレブン</a>
+            <a href="https://www.family.co.jp/services/print/scan.html" target="_blank">🏪 ファミリーマート</a>
+            <a href="https://www.lawson.co.jp/service/others/multicopy/" target="_blank">🏪 ローソン</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doc 09 法人 フォーム -->
+    <div class="doc-card">
+      <div class="doc-header" onclick="toggleDoc(this)">
+        <div class="doc-icon">✏️</div>
+        <div class="doc-meta">
+          <div class="doc-num">Doc 09</div>
+          <div class="doc-name">フォーム入力</div>
+          <div class="doc-tags">
+            <span class="doc-tag tag-required">入力必須</span>
+          </div>
+        </div>
+        <div class="doc-chevron">⌄</div>
+      </div>
+      <div class="doc-body">
+        <div class="notice-box notice-info">
+          <h4>📄 通常枠・W申請の方</h4>
+          <a class="btn-link btn-primary" href="https://s57i7.share-na2.hsforms.com/2avTSvWl3SNeWEufM3ChTzg" target="_blank" style="margin-top:8px;display:inline-flex">▶ 【通常枠/法人】フォームはこちら</a>
+          <p style="margin-top:6px;font-size:12px;color:#6b7280">※W申請：通常枠とインボイス枠の両方を申請する方</p>
+        </div>
+        <div class="notice-box notice-info">
+          <h4>📑 インボイス枠申請の方</h4>
+          <a class="btn-link btn-primary" href="https://s57i7.share-na2.hsforms.com/2WwValj68TGKWVuSm9BoJRQ" target="_blank" style="margin-top:8px;display:inline-flex">▶ 【インボイス枠/法人】フォームはこちら</a>
+        </div>
+        <div class="notice-box notice-warn">
+          <h4>🚩 ご注意ください</h4>
+          <ul>
+            <li>申請枠によってご入力いただくフォームが<strong>異なります</strong></li>
+            <li>申請枠が分からない場合は、<strong>必ず弊社担当へご確認ください</strong></li>
+            <li>交付必要書類をお手元にお持ちの場合は、フォーム内にてご添付いただけます</li>
+            <li>「<strong>送信済みフォーム</strong>」が表示されましたら、入力は完了となります</li>
+          </ul>
+        </div>
+        <div class="notice-box notice-success">
+          <h4>✅ 決算内容の入力について</h4>
+          <p>フォームに入力いただく各項目は、決算書の「<strong>損益計算書</strong>」からご確認ください。</p>
+          <p style="margin-top:6px">「給与支給総額」の実績数値は以下資料に基づいて入力してください：<br>
+          📋 <strong>勘定科目内訳明細書（⑭役員報酬手当等及び人件費の内訳）</strong></p>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /docs-corp -->
+
+  <!-- ========== 個人事業主向け ========== -->
+  <div id="docs-indiv" class="docs-list" style="display:none">
+
+    <!-- Doc 01 個人 -->
+    <div class="doc-card">
+      <div class="doc-header" onclick="toggleDoc(this)">
+        <div class="doc-icon">🔑</div>
+        <div class="doc-meta">
+          <div class="doc-num">Doc 01</div>
+          <div class="doc-name">GビズIDプライム</div>
+          <div class="doc-tags">
+            <span class="doc-tag tag-online">オンライン取得</span>
+            <span class="doc-tag tag-time">要：マイナンバーカード</span>
+          </div>
+        </div>
+        <div class="doc-chevron">⌄</div>
+      </div>
+      <div class="doc-body">
+        <div class="doc-links">
+          <a class="btn-link btn-primary" href="https://gbiz-id.go.jp/top/" target="_blank">🌐 登録サイトへ</a>
+          <a class="btn-link btn-outline" href="https://drive.google.com/file/d/1nPSdUPOZbVX94MddtMLaJPZ4WQHDPB7l/view?usp=drive_link" target="_blank">📖 マニュアル</a>
+        </div>
+        <div class="notice-box notice-danger">
+          <h4>🚩 お早めに！時間がかかる場合があります</h4>
+          <ul>
+            <li>郵送手続きをされる場合はアカウント発行までに <strong>1〜2週間</strong> かかるため、お早めのご対応をお願いいたします。</li>
+            <li>オンライン手続きをされる場合は <strong>即日でアカウント発行</strong> 可能です。</li>
+          </ul>
+        </div>
+        <div class="notice-box notice-warn">
+          <h4>⚠️ 認証設定が必要です</h4>
+          <p>アプリ認証またはメールワンタイムパスワード認証の設定が必要です。</p>
+          <a class="btn-link btn-outline" href="https://drive.google.com/file/d/1mTpDkdmMH9XXdbIOxFky3r1YNk27ufjD/view?usp=sharing" target="_blank" style="margin-top:8px;display:inline-flex">📖 マニュアル</a>
+        </div>
+        <div class="notice-box notice-info">
+          <h4>📸 取得後にキャプチャをご共有ください</h4>
+          <p>GビズIDプライムを取得したら、<strong>マイページのTOP画面をキャプチャ</strong>してください。取得したキャプチャは、<strong>フォームに添付</strong>するか弊社担当者宛に <strong>メール/LINE</strong> でお送りください。</p>
+          <a class="btn-link btn-outline" href="https://drive.google.com/file/d/1Qs79DtPzecfnAgYsFRnrMKvYhq0ZmIQw/view?usp=drive_link" target="_blank" style="margin-top:8px;display:inline-flex">📖 キャプチャ取得マニュアル</a>
+        </div>
+        <div class="divider-cards">
+          <div class="mini-card">
+            <div class="mc-title">🪪 マイナンバーカードあり</div>
+            <p>オンラインで即日取得可能。スマートフォンアプリの登録が必須です。</p>
+          </div>
+          <div class="mini-card">
+            <div class="mc-title">📮 マイナンバーカードなし</div>
+            <p>郵送手続きにて取得可能。スマートフォンアプリの登録が必須です。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doc 02 個人 -->
+    <div class="doc-card">
+      <div class="doc-header" onclick="toggleDoc(this)">
+        <div class="doc-icon">🛡️</div>
+        <div class="doc-meta">
+          <div class="doc-num">Doc 02</div>
+          <div class="doc-name">SECURITY ACTION 自己宣言ID</div>
+          <div class="doc-tags">
+            <span class="doc-tag tag-online">オンライン取得</span>
+            <span class="doc-tag tag-time">約1週間</span>
+          </div>
+        </div>
+        <div class="doc-chevron">⌄</div>
+      </div>
+      <div class="doc-body">
+        <div class="doc-links">
+          <a class="btn-link btn-primary" href="https://sme-security.ipa.go.jp/login" target="_blank">🌐 登録サイトへ</a>
+          <a class="btn-link btn-outline" href="https://drive.google.com/file/d/14MjpicCex5vQFLMRIVe65Pzkh26MO1Zi/view?usp=drive_link" target="_blank">📖 マニュアル</a>
+        </div>
+        <div class="notice-box notice-danger">
+          <h4>🚨 2026年4月1日（予定）から申込方法が変わります！</h4>
+          <ul>
+            <li>第1次公募は現在の方法で取得した自己宣言ID・新システムのIDの双方で申請可能です。</li>
+            <li>第2次公募（2026年5月頃〜）以降は、<strong>現在の自己宣言IDでは申請できなくなります。</strong></li>
+          </ul>
+        </div>
+        <div class="notice-box notice-warn">
+          <h4>⏳ 発行まで約1週間</h4>
+          <p>📧 件名：<strong>【SECURITY ACTION】自己宣言IDのお知らせ</strong><br>
+          「<strong>4または5から始まる11桁の自己宣言ID</strong>」をフォームに入力または直接ご教示ください。</p>
+        </div>
+        <div class="notice-box notice-info">
+          <h4>⭐ 星の選択について</h4>
+          <p>「<strong>★一つ星</strong>」を推奨しております。</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doc 03 個人 -->
+    <div class="doc-card">
+      <div class="doc-header" onclick="toggleDoc(this)">
+        <div class="doc-icon">🗺️</div>
+        <div class="doc-meta">
+          <div class="doc-num">Doc 03</div>
+          <div class="doc-name">IT戦略ナビ with「IT戦略マップ」</div>
+          <div class="doc-tags">
+            <span class="doc-tag tag-online">オンライン作成</span>
+            <span class="doc-tag tag-doc">PDF提出</span>
+            <span class="doc-tag tag-bonus">加点対象</span>
+          </div>
+        </div>
+        <div class="doc-chevron">⌄</div>
+      </div>
+      <div class="doc-body">
+        <div class="doc-links">
+          <a class="btn-link btn-primary" href="https://digiwith.smrj.go.jp/it-map/diagnose/step1" target="_blank">🌐 作成サイトへ</a>
+          <a class="btn-link btn-outline" href="https://drive.google.com/file/d/1ebmyv7kfjC_Pc1Ma1P4cT7B08GUuZwoV/view?usp=drive_link" target="_blank">📖 作成マニュアル</a>
+        </div>
+        <div class="notice-box notice-info">
+          <ul>
+            <li>GビズIDプライムの<strong>メールアドレスを入力する画面</strong>がございますので、<strong>正確にご入力</strong>ください</li>
+            <li><strong>PDF</strong>でのご提出をお願いいたします</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doc 04 個人 -->
+    <div class="doc-card">
+      <div class="doc-header" onclick="toggleDoc(this)">
+        <div class="doc-icon">📊</div>
+        <div class="doc-meta">
+          <div class="doc-num">Doc 04</div>
+          <div class="doc-name">省力化ナビ</div>
+          <div class="doc-tags">
+            <span class="doc-tag tag-bonus">加点対象</span>
+          </div>
+        </div>
+        <div class="doc-chevron">⌄</div>
+      </div>
+      <div class="doc-body">
+        <div class="doc-links">
+          <a class="btn-link btn-primary" href="https://labour-saving.smrj.go.jp/" target="_blank">🌐 登録サイトへ</a>
+          <a class="btn-link btn-outline" href="https://drive.google.com/file/d/1k96fMSLWdzIamEmvhLi6pfqSMaPwh1U5/view?usp=drive_link" target="_blank">📖 マニュアル</a>
+        </div>
+        <p style="font-size:13.5px;color:#4b5563;margin-bottom:12px">みなさまの省力化・生産性向上への取組みを後押しするツールです。</p>
+        <div class="notice-box notice-warn">
+          <h4>⚠️ 注意事項</h4>
+          <ul>
+            <li>GビズIDで登録しているメールアドレス、企業名、担当者名を入力してください</li>
+            <li>補助金の加点に使用しますので、<strong>3箇所全て入力が必須</strong>となります</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doc 05 個人 -->
+    <div class="doc-card">
+      <div class="doc-header" onclick="toggleDoc(this)">
+        <div class="doc-icon">🤝</div>
+        <div class="doc-meta">
+          <div class="doc-num">Doc 05</div>
+          <div class="doc-name">成長加速マッチングサービス</div>
+          <div class="doc-tags">
+            <span class="doc-tag tag-bonus">加点対象</span>
+          </div>
+        </div>
+        <div class="doc-chevron">⌄</div>
+      </div>
+      <div class="doc-body">
+        <p style="font-size:13.5px;color:#4b5563;margin-bottom:12px">中小企業庁が運営する公的マッチングプラットフォームです。</p>
+        <div class="notice-box notice-warn">
+          <h4>⚠️ 注意事項</h4>
+          <ul>
+            <li>GビズIDプライムでログインいただきます</li>
+            <li>作業時間の目安：<strong>約15分</strong></li>
+            <li>挑戦課題を<strong>必ず1件以上登録</strong>し、ステータスが「掲載中」となっている必要があります</li>
+            <li>交付決定までは「掲載終了」を押さないようお願いいたします</li>
+          </ul>
+        </div>
+        <div class="notice-box notice-success">
+          <p>ステータスが「<strong>掲載中</strong>」となりましたら、画面キャプチャを取得してご共有ください。</p>
+          <div class="img-wrap">
+            <img src="https://i.imgur.com/tZbKioN.png" alt="掲載中ステータス確認画面の例">
+          </div>
+        </div>
+        <div class="doc-links">
+          <a class="btn-link btn-primary" href="https://mirasapo-connect.go.jp/" target="_blank">▶ サービス詳細・登録はこちら</a>
+          <a class="btn-link btn-outline" href="https://drive.google.com/file/d/1L-ioFwe2yZzhzB5DuW0UENYxnJ7mJAUO/view?usp=drive_link" target="_blank">📖 マニュアル</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doc 06 個人 運転免許証 -->
+    <div class="doc-card">
+      <div class="doc-header" onclick="toggleDoc(this)">
+        <div class="doc-icon">🪪</div>
+        <div class="doc-meta">
+          <div class="doc-num">Doc 06</div>
+          <div class="doc-name">運転免許証または住民票</div>
+          <div class="doc-tags">
+            <span class="doc-tag tag-doc">書類</span>
+          </div>
+        </div>
+        <div class="doc-chevron">⌄</div>
+      </div>
+      <div class="doc-body">
+        <div class="doc-links">
+          <a class="btn-link btn-outline" href="https://drive.google.com/file/d/1fMVBEoolHbxh0bO42QUJpoyU_IeaDNlf/view?usp=drive_link" target="_blank">📖 見本</a>
+        </div>
+        <div class="notice-box notice-info">
+          <h4>🪪 運転免許証の場合</h4>
+          <ul>
+            <li><strong>有効期限内</strong>であること</li>
+            <li><strong>両面</strong>が揃っていること</li>
+          </ul>
+        </div>
+        <div class="notice-box notice-info">
+          <h4>📄 住民票の場合（運転免許証を所持していない場合）</h4>
+          <ul>
+            <li>取得から <strong>3ヶ月以内</strong> のものをご準備ください</li>
+            <li>QRコードを含む<strong>マイナンバーや保険者番号・本籍の記載がない</strong>こと</li>
+          </ul>
+        </div>
+        <div class="conveni-box">
+          <div class="c-title">🏪 コンビニで書類をPDFにスキャンする方法</div>
+          <div class="c-need">必要なもの：30円（1枚あたり）／ USBメモリーまたはスマートフォンアプリ ※セブンイレブンスキャン用アプリが必要です（iOS / Android）</div>
+          <div class="conveni-links">
+            <a href="https://www.sej.co.jp/services/scan.html" target="_blank">🏪 セブンイレブン</a>
+            <a href="https://www.family.co.jp/services/print/scan.html" target="_blank">🏪 ファミリーマート</a>
+            <a href="https://www.lawson.co.jp/service/others/multicopy/" target="_blank">🏪 ローソン</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doc 07 個人 -->
+    <div class="doc-card">
+      <div class="doc-header" onclick="toggleDoc(this)">
+        <div class="doc-icon">🏦</div>
+        <div class="doc-meta">
+          <div class="doc-num">Doc 07</div>
+          <div class="doc-name">所得税納税証明書</div>
+          <div class="doc-tags">
+            <span class="doc-tag tag-doc">書類</span>
+            <span class="doc-tag tag-time">直近分</span>
+          </div>
+        </div>
+        <div class="doc-chevron">⌄</div>
+      </div>
+      <div class="doc-body">
+        <div class="doc-links">
+          <a class="btn-link btn-primary" href="https://www.nta.go.jp/about/organization/access/map.htm" target="_blank">🌐 税務署を探す</a>
+          <a class="btn-link btn-outline" href="https://drive.google.com/file/d/1Q5HMET8h0irae4dmZlidq7gtR9H0pHVV/view?usp=drive_link" target="_blank">📖 見本</a>
+        </div>
+        <div class="notice-box notice-info">
+          <ul>
+            <li>納税証明書「<strong>その2（所得金額用）</strong>」であること</li>
+            <li>税目が「<strong>所得税</strong>」であること</li>
+            <li><strong>直近分</strong>であること</li>
+            <li>発行元が「<strong>税務署</strong>」であること</li>
+          </ul>
+        </div>
+        <div class="conveni-box">
+          <div class="c-title">🏪 コンビニで書類をPDFにスキャンする方法</div>
+          <div class="c-need">必要なもの：30円（1枚あたり）／ USBメモリーまたはスマートフォンアプリ</div>
+          <div class="conveni-links">
+            <a href="https://www.sej.co.jp/services/scan.html" target="_blank">🏪 セブンイレブン</a>
+            <a href="https://www.family.co.jp/services/print/scan.html" target="_blank">🏪 ファミリーマート</a>
+            <a href="https://www.lawson.co.jp/service/others/multicopy/" target="_blank">🏪 ローソン</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doc 08 個人 確定申告書 -->
+    <div class="doc-card">
+      <div class="doc-header" onclick="toggleDoc(this)">
+        <div class="doc-icon">📋</div>
+        <div class="doc-meta">
+          <div class="doc-num">Doc 08</div>
+          <div class="doc-name">確定申告書第一表の控え</div>
+          <div class="doc-tags">
+            <span class="doc-tag tag-doc">書類</span>
+          </div>
+        </div>
+        <div class="doc-chevron">⌄</div>
+      </div>
+      <div class="doc-body">
+        <div class="doc-links">
+          <a class="btn-link btn-outline" href="https://drive.google.com/file/d/1x4ZX07YwhNI53e3uue8DZBaweAphW7M9/view?usp=drive_link" target="_blank">📖 見本</a>
+        </div>
+        <div class="notice-box notice-info">
+          <ul>
+            <li>税務署が<strong>受領しているもの</strong></li>
+            <li><strong>令和7年度</strong>のもの（令和6年度はNG）</li>
+          </ul>
+        </div>
+        <div class="notice-box notice-success">
+          <h4>✅ ❶・❷ どちらかでの確認が必要です</h4>
+          <p><strong>❶</strong> 受信通知・メール詳細があるか ※ web上での取得の場合</p>
+          <p style="margin-top:4px"><strong>❷</strong> 「受付日時」「受付番号」「電子申告済み」の文言が記載されているか</p>
+          <p style="margin-top:6px;font-size:12px;color:#6b7280">※書類のタイトルが「確定申告書」と異なる場合は、正しい書類か確認いたしますのでご連絡ください。</p>
+        </div>
+        <div class="conveni-box">
+          <div class="c-title">🏪 コンビニで書類をPDFにスキャンする方法</div>
+          <div class="c-need">必要なもの：30円（1枚あたり）／ USBメモリーまたはスマートフォンアプリ</div>
+          <div class="conveni-links">
+            <a href="https://www.sej.co.jp/services/scan.html" target="_blank">🏪 セブンイレブン</a>
+            <a href="https://www.family.co.jp/services/print/scan.html" target="_blank">🏪 ファミリーマート</a>
+            <a href="https://www.lawson.co.jp/service/others/multicopy/" target="_blank">🏪 ローソン</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doc 09 個人 決算書 -->
+    <div class="doc-card">
+      <div class="doc-header" onclick="toggleDoc(this)">
+        <div class="doc-icon">📑</div>
+        <div class="doc-meta">
+          <div class="doc-num">Doc 09</div>
+          <div class="doc-name">決算書書類一式</div>
+          <div class="doc-tags">
+            <span class="doc-tag tag-doc">書類</span>
+            <span class="doc-tag tag-time">直近分</span>
+          </div>
+        </div>
+        <div class="doc-chevron">⌄</div>
+      </div>
+      <div class="doc-body">
+        <div class="notice-box notice-info">
+          <ul>
+            <li>直近分の<strong>前期決算書</strong>であること</li>
+          </ul>
+        </div>
+        <div class="notice-box notice-success">
+          <h4>📋 以下どちらかの決算書であること</h4>
+          <p>① <strong>青色申告決算書</strong></p>
+          <p style="margin-top:4px">② <strong>白色申告 収支内訳書</strong></p>
+        </div>
+        <div class="conveni-box">
+          <div class="c-title">🏪 コンビニで書類をPDFにスキャンする方法</div>
+          <div class="c-need">必要なもの：30円（1枚あたり）／ USBメモリーまたはスマートフォンアプリ</div>
+          <div class="conveni-links">
+            <a href="https://www.sej.co.jp/services/scan.html" target="_blank">🏪 セブンイレブン</a>
+            <a href="https://www.family.co.jp/services/print/scan.html" target="_blank">🏪 ファミリーマート</a>
+            <a href="https://www.lawson.co.jp/service/others/multicopy/" target="_blank">🏪 ローソン</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Doc 10 個人 フォーム -->
+    <div class="doc-card">
+      <div class="doc-header" onclick="toggleDoc(this)">
+        <div class="doc-icon">✏️</div>
+        <div class="doc-meta">
+          <div class="doc-num">Doc 10</div>
+          <div class="doc-name">フォーム入力</div>
+          <div class="doc-tags">
+            <span class="doc-tag tag-required">入力必須</span>
+          </div>
+        </div>
+        <div class="doc-chevron">⌄</div>
+      </div>
+      <div class="doc-body">
+        <div class="notice-box notice-info">
+          <h4>📄 通常枠・W申請の方</h4>
+          <a class="btn-link btn-primary" href="https://share-na2.hsforms.com/2fGy3QmF6Qc-J7DFxfEovRQs57i7" target="_blank" style="margin-top:8px;display:inline-flex">▶ 【通常枠/個人】フォームはこちら</a>
+          <p style="margin-top:6px;font-size:12px;color:#6b7280">※W申請：通常枠とインボイス枠の両方を申請する方</p>
+        </div>
+        <div class="notice-box notice-info">
+          <h4>📑 インボイス枠申請の方</h4>
+          <a class="btn-link btn-primary" href="https://s57i7.share-na2.hsforms.com/20i5g_fZgScm--XbtBci7mg" target="_blank" style="margin-top:8px;display:inline-flex">▶ 【インボイス枠/個人】フォームはこちら</a>
+        </div>
+        <div class="notice-box notice-warn">
+          <h4>🚩 ご注意ください</h4>
+          <ul>
+            <li>申請枠によってご入力いただくフォームが<strong>異なります</strong></li>
+            <li>申請枠が分からない場合は、<strong>必ず弊社担当へご確認ください</strong></li>
+            <li>「<strong>送信済みフォーム</strong>」が表示されましたら、入力は完了となります</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /docs-indiv -->
+
+  <p style="font-size:12px;color:#9ca3af;text-align:center;margin-top:28px">
+    出典：<a href="https://it-shien.smrj.go.jp/" target="_blank" style="color:#6b7280">デジタル化・AI導入補助金 公式サイト</a>
+  </p>
+
+</main>
+
+<footer>
+  <p>ご不明な点は弊社担当者までお問い合わせください。</p>
+  <p style="margin-top:8px">© 2026 株式会社MAIN'S（メインズ） All Rights Reserved.</p>
+</footer>
+
+<script>
+// ── Modal ──
+const modalBody = document.getElementById('modal-body');
+const confirmBtn = document.getElementById('confirm-btn');
+const scrollHint = document.getElementById('scroll-hint');
+let scrolled = false;
+
+modalBody.addEventListener('scroll', function(){
+  const bottom = this.scrollHeight - this.scrollTop - this.clientHeight;
+  if(bottom < 60 && !scrolled){
+    scrolled = true;
+    confirmBtn.classList.add('active');
+    scrollHint.style.display = 'none';
+  }
+});
+
+function closeModal(){
+  if(!confirmBtn.classList.contains('active')) return;
+  document.getElementById('fraud-modal').classList.add('hidden');
+}
+
+function openModal(){
+  document.getElementById('fraud-modal').classList.remove('hidden');
+}
+
+// ── Tabs ──
+function switchTab(tab){
+  document.getElementById('docs-corp').style.display = tab==='corp' ? 'flex' : 'none';
+  document.getElementById('docs-indiv').style.display = tab==='indiv' ? 'flex' : 'none';
+  document.getElementById('tab-corp').classList.toggle('active', tab==='corp');
+  document.getElementById('tab-indiv').classList.toggle('active', tab==='indiv');
+}
+
+// ── Accordion ──
+function toggleDoc(header){
+  const body = header.nextElementSibling;
+  const chevron = header.querySelector('.doc-chevron');
+  const isOpen = body.classList.contains('open');
+  body.classList.toggle('open', !isOpen);
+  chevron.classList.toggle('open', !isOpen);
+}
+</script>
+
+</body>
+</html>
